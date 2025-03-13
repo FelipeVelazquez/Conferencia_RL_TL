@@ -1,0 +1,264 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/Spot.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.1187512160644534 -0.04438896636788501 0.9919313324761972 3.851751522590357
+  position 36.933880064333074 36.90657005456828 11.46700863344404
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 30 30
+  floorAppearance Parquetry {
+  }
+  wallHeight 0.5
+}
+Spot {
+  translation -0.06 -2.61 0.624
+  name "robot_1"
+  controller "mqtt_master_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation -0.27 1.91 0.654
+  name "robot_2"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation -6.84 -2.56 0.614
+  name "robot_3"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation -6.65 1.77 0.624
+  name "robot_4"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation -6.92 -7.75 0.634
+  name "robot_5"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation -0.11 -7.92 0.614
+  name "robot_6"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation 6.23 1.97 0.724
+  name "robot_7"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation 6.66 -7.76 0.654
+  name "robot_8"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation 6.76 -11.28 0.664
+  name "robot_16"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation -0.15 -11.28 0.644
+  name "robot_17"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation -6.63 -11.28 0.634
+  name "robot_18"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation 6.36 -2.75 0.674
+  name "robot_9"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation 6 7.48 0.684
+  name "robot_10"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation 10.15 7.48 0.664
+  name "robot_20"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation 10.25 2.07 0.654
+  name "robot_21"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation 10.35 -2.69 0.664
+  name "robot_22"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation 10.45 -7.8 0.634
+  name "robot_23"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation 10.55 -10.93 0.624
+  name "robot_24"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation 6.1 11.43 0.654
+  name "robot_11"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation 10.25 11.43 0.644
+  name "robot_19"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation 0.01 11.43 0.644
+  name "robot_12"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation -6.45 11.43 0.744
+  name "robot_13"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation -11.89 11.43 0.744
+  name "robot_25"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation -11.79 7.36 0.754
+  name "robot_26"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation -11.79 1.89 0.694
+  name "robot_27"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation -11.69 -2.02 0.704
+  name "robot_28"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation -11.59 -7.19 0.804
+  name "robot_29"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation -11.49 -11.12 0.904
+  name "robot_30"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation 0.26 7.55 0.644
+  name "robot_14"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
+Spot {
+  translation -6.51 7.46 0.634
+  name "robot_15"
+  controller "vector_controller"
+  controllerArgs [
+    ""
+  ]
+}
