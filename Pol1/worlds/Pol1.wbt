@@ -1,0 +1,685 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/TireRubber.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/RedBricks.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.21065685077899574 0.0606765997682804 -0.9756751721041363 2.65153625686418
+  position 8.109532771966128 4.08481926739745 4.341694353902571
+}
+TexturedBackgroundLight {
+}
+TexturedBackground {
+}
+RectangleArena {
+  floorSize 5 5
+  floorTileSize 1 1
+  floorAppearance Parquetry {
+    type "dark strip"
+  }
+  wallHeight 0.5
+}
+DEF ROBOT Robot {
+  translation 2.3079312382396373 -0.32246597262363436 0.029777670689746072
+  rotation -6.36373938057131e-08 1.3984006580250416e-06 -0.9999999999990201 3.066133958522829
+  children [
+    GPS {
+    }
+    DistanceSensor {
+      translation 0.1 0 0.03
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.04 0.01
+          }
+        }
+      ]
+      name "FSensor"
+    }
+    DistanceSensor {
+      translation -0.1 -2.06647e-15 0.03
+      rotation 0 0 1 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.04 0.01
+          }
+        }
+      ]
+      name "BSensor"
+    }
+    DistanceSensor {
+      translation 0.0870711 0.0329289 0.03
+      rotation 0 0 1 0.785398
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.04 0.01
+          }
+        }
+      ]
+      name "LSensor"
+    }
+    DistanceSensor {
+      translation 0.0870711 -0.0329289 0.03
+      rotation 0 0 1 -0.785398
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.04 0.01
+          }
+        }
+      ]
+      name "RSensor"
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 529.6915806203837
+        axis 0 1 0
+        anchor 0.08 0 0
+      }
+      device [
+        RotationalMotor {
+          name "FLWheel"
+        }
+      ]
+      endPoint Solid {
+        translation 0.08 0.05499999999999822 0
+        rotation 0.4495828010656444 0.6318665501524694 -0.6313635781262539 2.2959830013799554
+        children [
+          DEF FLWheel Shape {
+            appearance TireRubber {
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.03
+            }
+          }
+        ]
+        name "FLWheel"
+        boundingObject USE FLWheel
+        physics Physics {
+        }
+        linearVelocity -6.850703578143478e-09 -4.7896635264061624e-09 -1.2882302126839372e-08
+        angularVelocity 1.3239423134887063e-08 -1.6348058040751329e-07 1.6319333793148276e-09
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 310.42501833185895
+        axis 0 1 0
+        anchor 0.08 0 0
+      }
+      device [
+        RotationalMotor {
+          name "FRWheel"
+        }
+      ]
+      endPoint Solid {
+        translation 0.08 -0.055000000000000195 0
+        rotation -0.21094915536591854 -0.6914699358554677 0.6909195189444578 3.557716598280761
+        children [
+          DEF FLWheel Shape {
+            appearance TireRubber {
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.03
+            }
+          }
+        ]
+        name "FRWheel"
+        boundingObject USE FLWheel
+        physics Physics {
+        }
+        linearVelocity -5.8682000555392e-09 2.06881409217984e-09 -1.282168906925134e-08
+        angularVelocity 1.3577529817600852e-08 -1.6336488788957157e-07 2.1968318998005175e-09
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 310.4250767133259
+        axis 0 1 0
+        anchor -0.08 0 0
+      }
+      device [
+        RotationalMotor {
+          name "BRWheel"
+        }
+      ]
+      endPoint Solid {
+        translation -0.08 -0.05499999999999983 0
+        rotation -0.21092808804188676 -0.6914731517875896 0.690922732316669 3.557676229157679
+        children [
+          DEF FLWheel Shape {
+            appearance TireRubber {
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.03
+            }
+          }
+        ]
+        name "BRWheel"
+        boundingObject USE FLWheel
+        physics Physics {
+        }
+        linearVelocity -1.97787891511939e-09 3.9968106064267105e-09 1.2884532908915251e-08
+        angularVelocity 1.3561586982009076e-08 -1.631243666132212e-07 1.9454836474636005e-09
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 529.6916616437787
+        axis 0 1 0
+        anchor -0.08 0 0
+      }
+      device [
+        RotationalMotor {
+          name "BLWheel"
+        }
+      ]
+      endPoint Solid {
+        translation -0.08 0.054999999999999626 0
+        rotation 0.449552045436019 0.6318774999486338 -0.6313745192062756 2.296034197796681
+        children [
+          DEF FLWheel Shape {
+            appearance TireRubber {
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.03
+            }
+          }
+        ]
+        name "BLWheel"
+        boundingObject USE FLWheel
+        physics Physics {
+        }
+        linearVelocity -4.903169133335868e-09 -2.8864397127431894e-09 1.2819889337969193e-08
+        angularVelocity 1.3302546837869056e-08 -1.633505585125713e-07 1.7759145717177537e-09
+      }
+    }
+    DEF Body Shape {
+      appearance PBRAppearance {
+        baseColor 0 0.5 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.2 0.1 0.05
+      }
+    }
+  ]
+  name "car"
+  boundingObject USE Body
+  physics Physics {
+  }
+  controller "rl_controller"
+  supervisor TRUE
+}
+Solid {
+  translation 1.71 -0.669998 0.05
+  rotation 0 0 1 -2.3561953071795863
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(10)"
+  boundingObject USE Wall
+}
+Solid {
+  translation 0.77 -0.549998 0.05
+  rotation 0 0 1 1.5708
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(19)"
+  boundingObject USE Wall
+}
+Solid {
+  translation -2.23 0.620002 0.05
+  rotation 0 0 1 1.5708
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(24)"
+  boundingObject USE Wall
+}
+Solid {
+  translation 1.71 1.33 0.05
+  rotation 0 0 1 1.5708
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(13)"
+  boundingObject USE Wall
+}
+Solid {
+  translation -0.59 1.74 0.05
+  rotation 0 0 1 1.5708
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(17)"
+  boundingObject USE Wall
+}
+Solid {
+  translation -1.78 -1.98 0.05
+  rotation 0 0 1 1.5708
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(14)"
+  boundingObject USE Wall
+}
+Solid {
+  translation 0.96 -1.28 0.05
+  rotation 0 0 1 1.5708
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(3)"
+  boundingObject USE Wall
+}
+Solid {
+  translation 2.25 -0.0899998 0.05
+  rotation 0 0 1 1.5708
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(22)"
+  boundingObject USE Wall
+}
+Solid {
+  translation 0.369178 2.20095 0.05
+  rotation 0 0 -1 -0.5236053071795865
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(9)"
+  boundingObject USE Wall
+}
+Solid {
+  translation -1.22263 -1.29437 0.05
+  rotation 0 0 1 -0.523595307179586
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(11)"
+  boundingObject USE Wall
+}
+Solid {
+  translation -0.591071 -0.535812 0.05
+  rotation 0 0 -1 -0.5236053071795865
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(16)"
+  boundingObject USE Wall
+}
+Solid {
+  translation 0.99221 -2.05807 0.05
+  rotation 0 0 -1 -0.5236053071795865
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(12)"
+  boundingObject USE Wall
+}
+Solid {
+  translation 0.81 0.410002 0.05
+  rotation 0 0 1 2.3562
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject USE Wall
+}
+Solid {
+  translation -0.38499 -2.21334 0.05
+  rotation 0 0 1 2.3562
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(8)"
+  boundingObject USE Wall
+}
+Solid {
+  translation 0.048731 -1.32132 0.05
+  rotation 0 0 1 -3.1415853071795863
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject USE Wall
+}
+Solid {
+  translation -1.99127 -0.77132 0.05
+  rotation 0 0 1 -3.1415853071795863
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(21)"
+  boundingObject USE Wall
+}
+Solid {
+  translation -0.758502 0.81368 0.05
+  rotation 0 0 -1 2.61799
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(4)"
+  boundingObject USE Wall
+}
+Solid {
+  translation -2.01128 1.02867 0.05
+  rotation 0 0 1 -3.1415853071795863
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(15)"
+  boundingObject USE Wall
+}
+Solid {
+  translation -1.57128 0.028674 0.05
+  rotation 0 0 1 -3.1415853071795863
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(5)"
+  boundingObject USE Wall
+}
+Solid {
+  translation 1.89872 -1.49133 0.05
+  rotation 0 0 1 -3.1415853071795863
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(6)"
+  boundingObject USE Wall
+}
+Solid {
+  translation -1.55128 1.90867 0.05
+  rotation 0 0 1 -3.1415853071795863
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(7)"
+  boundingObject USE Wall
+}
+Solid {
+  translation 1.88872 0.54867 0.05
+  rotation 0 0 1 -3.1415853071795863
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(18)"
+  boundingObject USE Wall
+}
+Solid {
+  translation 0.11872 0.94866 0.05
+  rotation 0 0 1 -3.1415853071795863
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(20)"
+  boundingObject USE Wall
+}
+Solid {
+  translation 0.65872 1.42866 0.05
+  rotation 0 0 1 -3.1415853071795863
+  children [
+    DEF Wall Shape {
+      appearance RedBricks {
+      }
+      geometry Box {
+        size 0.3 0.5 0.1
+      }
+    }
+  ]
+  name "solid(23)"
+  boundingObject USE Wall
+}
+DEF goal_1 Solid {
+  translation -1.18978 1.32494 0.04969057110025438
+  rotation 0.12172481092331873 -0.4082735181048881 0.9047075797294615 3.2843758373945614e-17
+  children [
+    DEF goal_1_cl Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.05
+      }
+    }
+  ]
+}
+DEF goal_2 Solid {
+  translation 1.44022 -1.69506 0.0496906
+  rotation 0.12172481092331873 -0.4082735181048881 0.9047075797294615 3.2843758373945614e-17
+  children [
+    DEF goal_1_cl Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.05
+      }
+    }
+  ]
+  name "solid(25)"
+}
+DEF goal_3 Solid {
+  translation -0.51978 -1.36506 0.0496906
+  rotation 0.12172481092331873 -0.4082735181048881 0.9047075797294615 3.2843758373945614e-17
+  children [
+    DEF goal_1_cl Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.05
+      }
+    }
+  ]
+  name "solid(26)"
+}
+DEF goal_4 Solid {
+  translation -2.06978 0.08494 0.0496906
+  rotation 0.12172481092331873 -0.4082735181048881 0.9047075797294615 3.2843758373945614e-17
+  children [
+    DEF goal_1_cl Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.05
+      }
+    }
+  ]
+  name "solid(27)"
+}
+DEF goal_5 Solid {
+  translation 1.69022 1.92494 0.0496906
+  rotation 0.12172481092331873 -0.4082735181048881 0.9047075797294615 3.2843758373945614e-17
+  children [
+    DEF goal_1_cl Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.05
+      }
+    }
+  ]
+  name "solid(28)"
+}
